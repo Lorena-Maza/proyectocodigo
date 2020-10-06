@@ -17,8 +17,8 @@ import CrearProductoSanView from './views/CrearProductoSanView';
 export default function routes() {
   return (
     <Fragment>
-       <Route exact path="/" component={LoginView} />
-      <Route exact path="/home" component={HomeView} />
+       <Route exact path="/inicio" component={LoginView} />
+      <Route exact path="/" component={HomeView} />
       <Route exact path="/tematicas/babyshower" component={BabyShowerView} />
       <Route exact path="/detalle/:id" component={DetailView} />
       <Route exact path="/carrito" component={CarritoView}/>

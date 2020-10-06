@@ -1,16 +1,46 @@
 import React from "react";
-import {Navbar, Nav,FormControl,Form,Button,NavDropdown} from 'react-bootstrap';
+import Carousel from 'react-bootstrap/Carousel'
 
-export default function Navigation() {
+export default function Home() {
   return (
-      <div role="main" class="container">
-        <div class="jumbotron">
-          <h1>Box summer</h1>
-        
-          <img src="../img/box2.jpg" class="img-fluid" alt="Responsive image" />
-          <p1 class="lead">Ya llega el verano y vamos a disfrutarlo juntos!!</p1>
-          <a class="btn btn-warning btn" href="./projecto festo.css" role="button">Ver más temáticas &raquo;</a>
-        </div>
-      </div>
+    <Carousel>
+    <Carousel.Item interval={1000}>
+      <img
+        className="d-block w-100"
+        src="/img/box2222.jpg"
+        alt="First slide"
+       
+      />
+      <Carousel.Caption >
+        <h3>Arma tu Box</h3>
+        <p>Visita nuestas Temáticas</p>
+      </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item interval={500}>
+      <img
+        className="d-block w-100"
+        src="/img/caballitos-boys.jpeg"
+        alt="Third slide"
+      />
+      <Carousel.Caption>
+        <h3>te ayudamos a decorar</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+      <img
+        className="d-block w-100"
+        src="/img/llamaparty22.jpg"
+        alt="Third slide"
+      />
+      <Carousel.Caption>
+        <h3>Que comience la fiesta!</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </Carousel.Caption>
+    </Carousel.Item>
+  </Carousel>
+
+    
+
   );
 }

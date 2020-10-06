@@ -2,10 +2,10 @@ import React from 'react'
 import Navigation from "../components/Navigation";
 import Home from '../components/Home';
 
-export default function HomeView() {
+export default function HomeViewome() {
   return (
     
-     <div className="mt-4">
+      <div className="mt-4">
         <Navigation />
 
         <Home/>      

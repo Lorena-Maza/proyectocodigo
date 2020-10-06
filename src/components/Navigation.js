@@ -26,6 +26,7 @@ export default function Navigation() {
             <NavDropdown.Item href="festividades/annionuevo">Año Nuevo</NavDropdown.Item>
           </NavDropdown>
           <Nav.Link href="/registrate">Regístrate</Nav.Link>
+          <Nav.Link href="/inicio">Login</Nav.Link>
         </Nav>       
         <Navbar.Collapse className="justify-content-end">
               

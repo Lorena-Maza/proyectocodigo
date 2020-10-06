@@ -9,7 +9,8 @@ export default function RegisterView() {
   const registrar = (e) => {
     e.preventDefault();
     registro(correo, password)
-      .then((rpta) => console.log(rpta))
+      .then((rpta) => console.log(rpta) 
+      )
       .catch((err) => console.log(err));
   };
   // Swal.fire({
