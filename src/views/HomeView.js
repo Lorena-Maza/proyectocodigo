@@ -1,14 +1,16 @@
 import React from 'react'
 import Navigation from "../components/Navigation";
 import Home from '../components/Home';
+import Footer from '../components/Footer';
 
 export default function HomeViewome() {
   return (
     
-      <div className="mt-4">
+      <div className="container-fluid">
         <Navigation />
-
-        <Home/>      
+        
+        <Home/>   
+        <Footer />   
      </div>
 
   

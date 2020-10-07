@@ -1,46 +1,44 @@
 import React from "react";
-import Carousel from 'react-bootstrap/Carousel'
+import Carousel from 'react-bootstrap/Carousel';
+
 
 export default function Home() {
   return (
     <Carousel>
-    <Carousel.Item interval={1000}>
-      <img
+    <Carousel.Item style={{'height':"450px"}}>
+      <img  style={{'height':"450px"}}  
         className="d-block w-100"
-        src="/img/box2222.jpg"
+        src="/img/v3_2.png"
         alt="First slide"
-       
-      />
-      <Carousel.Caption >
-        <h3>Arma tu Box</h3>
-        <p>Visita nuestas Temáticas</p>
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item interval={500}>
-      <img
-        className="d-block w-100"
-        src="/img/caballitos-boys.jpeg"
-        alt="Third slide"
       />
       <Carousel.Caption>
-        <h3>te ayudamos a decorar</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h3>¡Que empieze la Fiesta!</h3>
       </Carousel.Caption>
     </Carousel.Item>
-    <Carousel.Item>
-      <img
+    <Carousel.Item style={{'height':"450px"}}>
+      <img  style={{'height':"450px"}}  
         className="d-block w-100"
-        src="/img/llamaparty22.jpg"
+        src="/img/box2.jpg"
         alt="Third slide"
       />
+  
       <Carousel.Caption>
-        <h3>Que comience la fiesta!</h3>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        <h3>Escoge tu caja de Fiesta</h3>
+      </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item style={{'height':"450px"}}>
+      <img  style={{'height':"450px"}}  
+        className="d-block w-100"
+        src="/img/halloween.jpg"
+        alt="Third slide"
+      />
+  
+      <Carousel.Caption>
+        <h3>Siéntate y Relájate</h3>
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>
 
-    
 
-  );
+  )
 }
