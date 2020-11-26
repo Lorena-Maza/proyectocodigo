@@ -1,63 +1,44 @@
 import React from "react";
-import {Navbar, Nav,FormControl,Form,Button,NavDropdown} from 'react-bootstrap';
+import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
+import {Link} from "react-router-dom";
+import register from '../img/registrarse.svg';
+import carrito from '../img/car.png';
+import login  from '../img/iniciarsesion.svg';
+
+// const navbar = {backgroundColor: '#f30fb5', color:'white'};
+const navbar = {backgroundColor: '#E9136D '};
+
 
 export default function Navigation() {
   return (
-      <Navbar bg="dark" expand="lg"  variant="dark">
-        <Navbar.Brand>FESTOSHOP</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Nav  className="mr-auto">
-          <Nav.Link href="/">Inicio</Nav.Link>
-          <NavDropdown title="Tematicas" id="basic-nav-dropdown">
-            <NavDropdown.Item href="tematicas/babyshower">Baby Shower</NavDropdown.Item>
-            <NavDropdown.Item href="tematicas/frozen">Frozen</NavDropdown.Item>
-            <NavDropdown.Item href="tematicas/fiesta">Fiesta</NavDropdown.Item>
-            <NavDropdown.Item href="tematicas/carro">Carros</NavDropdown.Item>
-            <NavDropdown.Item href="tematicas/princesa">Princesas</NavDropdown.Item>
-          </NavDropdown>
-          <NavDropdown title="Categorias" id="basic-nav-dropdown">
-          <NavDropdown.Item href="festividades/sanvalentin">San Valentín</NavDropdown.Item>
-            <NavDropdown.Item href="festividades/madre">Día de la Madre</NavDropdown.Item>
-            <NavDropdown.Item href="festividades/padre">Día del Padre</NavDropdown.Item>
-            <NavDropdown.Item href="festividades/primavera">Día de la primavera</NavDropdown.Item>
-            <NavDropdown.Item href="festividades/halloween">Halloween</NavDropdown.Item>
-            <NavDropdown.Item href="festividades/navidad">Navidad</NavDropdown.Item>
-            <NavDropdown.Item href="festividades/annionuevo">Año Nuevo</NavDropdown.Item>
-          </NavDropdown>
-          <NavDropdown title="Productos" id="basic-nav-dropdown">
-          <NavDropdown.Item href="festividades/sanvalentin">San Valentín</NavDropdown.Item>
-            <NavDropdown.Item href="festividades/madre">Día de la Madre</NavDropdown.Item>
-            <NavDropdown.Item href="festividades/padre">Día del Padre</NavDropdown.Item>
-            <NavDropdown.Item href="festividades/primavera">Día de la primavera</NavDropdown.Item>
-            <NavDropdown.Item href="festividades/halloween">Halloween</NavDropdown.Item>
-            <NavDropdown.Item href="festividades/navidad">Navidad</NavDropdown.Item>
-            <NavDropdown.Item href="festividades/annionuevo">Año Nuevo</NavDropdown.Item>
-          </NavDropdown>
-          </Nav>
-          
-          <Form inline> 
-        <Navbar>
-          <Navbar.Brand href="/registrate">
-          <img
-            src="/img/v6_8.png"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            alt="Regístrate"
-          />Regístrate
-          </Navbar.Brand>
-        </Navbar>
-        <Navbar>
-          <Navbar.Brand href="/carrito">
-          <img
-            src="/img/v15_0.png"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            alt="Carrito"
-          />Ver Carrito
-          </Navbar.Brand>
-        </Navbar> 
-        </Form></Navbar>
+    <div>   
+      <Navbar style={navbar}  variant="dark" >
+      <Navbar.Brand href="/">FestoShop</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          {/* <Nav.Link><Link to='/QuienesSomos' style={{color: 'white', textDecoration: 'none'}}>Inicio</Link></Nav.Link>                           */}
+          {/* <NavDropdown title="Cajas Temáticas" id="basic-nav-dropdown" >
+            <NavDropdown.Item href="Caja/BabyShower">BabyShower</NavDropdown.Item>
+            <NavDropdown.Item href="Caja/Cumpleaños">Cumpleaños</NavDropdown.Item>
+            <NavDropdown.Item href="Caja/Despedida de Soltero">Despedida de Soltero</NavDropdown.Item>          
+          </NavDropdown> */}
+        
+          <Nav.Link><Link to='/admin/verproductos' style={{color: 'white', textDecoration: 'none'}}>Productos</Link></Nav.Link>                                   
+          <Nav.Link><Link to='/admin/vertematicas' style={{color: 'white', textDecoration: 'none'}}>Temáticas</Link></Nav.Link>                                   
+          <Nav.Link><Link to='/admin/vercategorias' style={{color: 'white', textDecoration: 'none'}}>Categorias</Link></Nav.Link>                                   
+        </Nav>
+        <Navbar.Collapse className="justify-content-end">              
+                <Nav.Link><Link to='/Registro' style={{color: 'white', textDecoration: 'none', stroke:'white'}}><img src={login} width="30" height="30" className="d-inline-block align-top" alt="Iniciar Sesión"/>Regístrarse</Link></Nav.Link>
+                {/* <Nav.Link><Link to='/cajaFiesta' style={{color: 'white', textDecoration: 'none'}}><img src={register} width="30" height="30" className="d-inline-block align-top" alt="Regístrate"/>Cajas de Fiesta</Link></Nav.Link>                 */}
+                <Nav.Link><Link to='/carrito' style={{color: 'white', textDecoration: 'none'}}><img src={carrito} width="30" height="30" className="d-inline-block align-top" alt="Carrito"/>Carrito</Link></Nav.Link>                
+        </Navbar.Collapse> 
+        <Form inline>
+      <FormControl type="text" placeholder="Buscar" className="mr-sm-2" />
+      <Button variant="outline-light">Buscar</Button>
+    </Form>      
+      </Navbar.Collapse>
+    </Navbar> 
+    </div>
   );
 }

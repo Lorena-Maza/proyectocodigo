@@ -1,19 +1,23 @@
-import React from 'react'
-import Navigation from "../components/Navigation";
-import Home from '../components/Home';
-import Footer from '../components/Footer';
+import React, { useState, useEffect } from "react";
 
-export default function HomeViewome() {
+
+import TarjetasComoFunciona from '../components/TarjetaComoFunciona';
+import Carrusel from '../components/Carrusel';
+
+export default function HomeView() {
   return (
-    
-      <div className="container-fluid">
-        <Navigation />
-        
-        <Home/>   
-        <Footer />   
-     </div>
+    <div className="mt-0">      
+      <div className="col">
+        <div className="mt-0">
+          <Carrusel/>
+          <br></br> 
+          <h4>
+            <p class="display-4">¿Cómo Funciona?</p></h4>           
+          <TarjetasComoFunciona/>
+          <br></br>            
+        </div>
+      </div>
+    </div>
 
-  
-  )
+  );
 }
-

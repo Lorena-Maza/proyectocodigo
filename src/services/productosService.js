@@ -1,46 +1,57 @@
 import axios from "axios";
 
-const URL = "https://5f6eca42adc24200166e0a8a.mockapi.io/Proyecto/Producto";
+const URL = "https://5f6e1f9360cf97001641bc09.mockapi.io/producto";          
 
 const obtenerProductos = async () => {
   try {
-    let {data} = await axios.get(URL);
+    let { data } = await axios.get(URL);
     return data;
-
   } catch (error) {
     return error;
   }
-}
+};
 
-const obtenerProductoPorId = async (prod_id) => {
+const obtenerProductoPorId = async (producto_id) => {
   try {
-    let {data} = await axios.get(`${URL}/${prod_id}`);
+    let { data } = await axios.get(`${URL}/${producto_id}`);    
     return data;
   } catch (error) {
     return error;
   }
-}
+};
 
 const crearProducto = async (objProducto) => {
-  try{
-    let headers = {
-      'Content-Type':'application/json'
-    }
-    let {data} = await axios.post(URL,objProducto,{headers})
-    return data;
-  }catch(error){
-    return error;
-  }
-}
-
-const borrarProducto = async (prod_id) => {
   try {
-    let {data} = await axios.delete(`${URL}/${prod_id}`);
+    let headers = {
+      "Content-Type": "application/json",
+    };
+    let { data } = await axios.post(URL, objProducto, { headers });
     return data;
   } catch (error) {
     return error;
   }
-}
+};
+
+const editarProducto = async (producto_id,objNewProducto) => {
+  try {
+    let headers = {
+      "Content-Type": "application/json",
+    };
+    let { data } = await axios.put(`${URL}/${producto_id}`, objNewProducto, { headers });
+    return data;    
+  } catch (error) {
+    return error;
+  }
+};
+
+const borrarProducto = async (producto_id) => {
+  try {
+    let { data } = await axios.delete(`${URL}/${producto_id}`);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
 
 const subirImagen = (imagen, refStorage) => {
   return new Promise((resolve, reject) => {
@@ -65,4 +76,11 @@ const subirImagen = (imagen, refStorage) => {
   });
 };
 
-export {obtenerProductos, obtenerProductoPorId, crearProducto, borrarProducto, subirImagen}
+export {
+  obtenerProductos,  
+  obtenerProductoPorId,
+  crearProducto,
+  editarProducto,
+  borrarProducto,
+  subirImagen
+};

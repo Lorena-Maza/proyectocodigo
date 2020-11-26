@@ -1,10 +1,13 @@
 import React,{useState, useContext} from 'react'
 import {ingresar} from "../services/authService";
 import {AuthContext} from "../context/authContext";
+import {useHistory} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default function LoginView() {
   const [correo, setCorreo] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   const {user, setAuthUser} = useContext(AuthContext);
 
@@ -13,6 +16,7 @@ export default function LoginView() {
     ingresar(correo, password)
     .then(rpta => {
       setAuthUser(rpta.uid);
+      return history.push('/admin/dashboard')
     })
     .catch(err => console.log(err))
   }
@@ -23,7 +27,7 @@ export default function LoginView() {
         <div className="card mt-3">
           <div className="card-body">
             <h2 className="card-title">
-              Login
+              Iniciar Sesión
             </h2>
             <form onSubmit={(e)=>{loguear(e)}}>
               <div className="form-group">
@@ -48,9 +52,7 @@ export default function LoginView() {
                   }}
                 />
               </div>
-              <button type="submit" className="btn btn-primary btn-block">
-                Ingresar
-              </button>
+              <Link className="btn btn-lg btn-block btn-outline-primary" >Ingresar</Link>
             </form>
           </div>
         </div>

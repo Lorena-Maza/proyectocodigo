@@ -10,7 +10,6 @@ const AuthContextProvider = (props) => {
   const setAuthUser = (uid) => {
     setUser(uid);
     return history.push('/'); //con history hacemos que me lleve a la ruta indicada, es /
-    
   }
 
   return(
